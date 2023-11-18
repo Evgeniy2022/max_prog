@@ -3,15 +3,19 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
 	list-style: none;
 	border: none;
 }
 
+
 @font-face {
-	font-family: 'GilroyMedium';
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
 	src: url('/fonts/GilroyMedium.eot');
-	src: url('/fonts/GilroyMedium.eot') format('embedded-opentype'),
+	src: local('Gilroy'),
+		url('/fonts/GilroyMedium.eot') format('embedded-opentype'),
 		url('/fonts/GilroyMedium.woff2') format('woff2'),
 		url('/fonts/GilroyMedium.woff') format('woff'),
 		url('/fonts/GilroyMedium.ttf') format('truetype'),
@@ -19,18 +23,24 @@
 }
 @font-face {
 	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
 	src: url('/fonts/GilroyBold.eot');
-	src: url('/fonts/GilroyBold.eot') format('embedded-opentype'),
+	src: local('Gilroy'),
+	url('/fonts/GilroyBold.eot') format('embedded-opentype'),
 		url('/fonts/GilroyBold.woff2') format('woff2'),
 		url('/fonts/GilroyBold.woff') format('woff'),
 		url('/fonts/GilroyBold.ttf') format('truetype');
 }
 
 
+
 body{
 	height: 100vh;
 	background-color: #FFFFFF;
-	font-family: 'GilroyMedium';
+	font-family: 'Gilroy';
+	font-weight: 700;
 }
 body._lock{
 	overflow: hidden;
@@ -118,6 +128,9 @@ body._lock{
 		left: 250px;
 		top: 75px;
 	}
+	.navig-home-text{
+		font-size: 34px;
+	}
 	.navig-menu__icon::before,
 	.navig-menu__icon::after,
 	.navig-menu__icon span{
@@ -179,12 +192,14 @@ body._lock{
 	.border{
 	border-bottom: none;
 	}
-
+	li .menu-link{
+		font-size: 34px;
+	}
 }
 
 /*===============================================*/
 
-.main-name__container{
+.main-name__block{
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
@@ -198,7 +213,7 @@ body._lock{
 }
 
 @media (max-width: 315.98px) {
-	.main-name__container {
+	.main-name__block {
 		padding: 65px 0 0 0;
 		display: block;
 		margin: 0 0 36px 0;
@@ -212,12 +227,16 @@ body._lock{
 	font-size: 18px;
 	line-height: 22px;
 	max-width: 156px;
+	font-weight: 500;
 }
 
 .main-name__lang {
 	font-size: 16px;
 	line-height: 20px;
-	transform: rotate(270deg) translateX(30px);
+	transform: rotate(270deg) translate(30px, 28px);
+}
+.main-name__lang a:last-child{
+	color: #000;
 }
 
 .main-name__lang span{
@@ -242,9 +261,8 @@ body._lock{
 	.main-photo__container img:first-child{
 	display: none;
 	}
-	.main-name__lang{
-		display: none;
-	}
+	
+		
 	.main-photo {
 		margin: 0 0 83px 0;
 	}
@@ -265,6 +283,7 @@ body._lock{
 }
 
 .main-aboutme__abootinfo{
+	font-weight: 500;
 	margin: 0 auto;
 	font-size: 18px;
 	max-width: 470px;
@@ -302,7 +321,16 @@ body._lock{
 	.main-aboutme__study br{
 	display: block;
 	}
-
+	.main-name__lang._active{
+		font-size: 34px;
+		opacity: 1;
+		transform: rotate(90deg) translate(400px, -100px);
+		transition: opacity 1s;
+	}
+	.main-name__lang{
+		opacity: 0;
+		
+	}
 	.main-aboutme__name br{
 		display: none;
 	}
@@ -317,6 +345,7 @@ body._lock{
 
 .main-skills__container {
 	text-align: center;
+	padding: 0 0 110px 0;
 }
 
 .main-skills__title {
@@ -326,8 +355,10 @@ body._lock{
 }
 
 .main-skills__desc {
+	font-weight: 500;
 	margin: 0 0 84px 0;
 	font-size: 18px;
+	
 }
 
 .main-skills__skills {
@@ -351,6 +382,7 @@ body._lock{
 	margin: 0 auto 42px auto;
 	max-width: 85px;
 	font-weight: bold;
+	min-height: 26px;
 }
 
 @media (max-width: 315.98px) {
@@ -416,6 +448,7 @@ body._lock{
 .main-portfolio__work1-desc a,
 .main-portfolio__work2-desc a,
 .main-portfolio__work3-desc a {
+	font-weight: 500;
 	color: #070707;
 }
 .main-portfolio__work1-desc a:hover,
@@ -451,7 +484,8 @@ body._lock{
 	padding: 115px 0 125px 0;
 }
 
-.footer-container {
+
+.footer__container{
 	text-align: center;
 }
 
@@ -463,6 +497,7 @@ body._lock{
 	justify-content: center;
 }
 .footer-contacts__desc{
+	font-weight: 500;
 	font-size: 18px;
 	margin: 0 auto 30px auto;
 	max-width: 275px;
@@ -500,6 +535,7 @@ body._lock{
 }
 
 .footer-contacts__social-desc {
+	font-weight: 500;
 	display: flex;
 	justify-content: center;
 	font-size: 14px;
